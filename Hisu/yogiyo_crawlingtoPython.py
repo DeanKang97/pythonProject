@@ -18,7 +18,7 @@ headers = {
 }
 
 
-driver = webdriver.Chrome("/Users/deankang/Documents/GitHub/pythonProject/Hisu/chromeDriver/chromedriver")
+driver = webdriver.Chrome("c:/Users/clfrh/chromedriver_win32/chromedriver.exe")
 driver.maximize_window()
 
 url = 'https://www.yogiyo.co.kr/mobile/#/'
@@ -27,11 +27,13 @@ driver.get(url)
 
 def set_location(location):
     print(location + '으로 위치 설정 하는중...')
+    driver.find_element_by_css_selector('.input-group > form > input').click()
+    driver.find_element_by_css_selector('#button_search_address > button.btn-search-location-cancel.btn-search-location.btn.btn-default > span').click()
     driver.find_element_by_name('address_input').send_keys(location)
-    # driver.find_element_by_xpath('//*[@id="search"]/div/form/input')
+    driver.find_element_by_xpath('//*[@id="search"]/div/form/input')
 
-    # driver.find_element_by_css_selector('.input-group > form > input').click()
-    # driver.find_element_by_css_selector('#button_search_address > button.btn-search-location-cancel > span').click()
+
+
     # driver.find_element_by_css_selector('#search> div > form > input')
     driver.find_element_by_css_selector('#button_search_address > button.btn.btn-default.ico-pick').click()
     time.sleep(2)
@@ -78,21 +80,6 @@ def scroll():
             prev_height = driver.execute_script("return document.body.scrollHeight")
 
 
-def get_restaurant_list():
-    restaurant_list = []
-    restaurants = driver.find_elements_by_css_selector(
-        '#content > div.content.ng-scope > div > div > div.restaurant-list > div.col-sm-6.contract')
-    print(len(restaurants))
-
-    for restaurant in restaurants:
-        restaurant_list.append(restaurant.find_element_by_css_selector(
-            'div > table > tbody > tr> td:nth-child(2) > div > div.restaurant-name.ng-binding').text)
-        print(restaurant)
-    return list(set(restaurant_list))
-
-
-restaurant_list = get_restaurant_list()
-
 
 def search_restaurant(restaurant_name):
     try:
@@ -106,7 +93,7 @@ def search_restaurant(restaurant_name):
     time.sleep(5)
 
 
-search_restaurant(restaurant_list[0])
+search_restaurant('동대문엽기떡볶이-역곡점')
 
 
 def go_to_restaurant():

@@ -12,8 +12,9 @@ import warnings
 warnings.filterwarnings('ignore')
 from selenium import webdriver
 
+#from yogiyo_init import restaurant_code
 
-#yogiyo_init.py 에서 받은 가게코드 활용
+#가게정보DB로 부터 받은 가게코드 값 넣기
 restaurant_code = '439809'
 
 headers = {

@@ -16,12 +16,14 @@ headers = {
     "User-Agent": "각자의 User-Agent를 넣어주자",
     "Accept-Language": "ko-KR,ko"
 }
+#
+# chrome_options = webdriver.ChromeOptions()
+# chrome_options.add_argument("--incognito")
 
-
-driver = webdriver.Chrome("c:/Users/clfrh/chromedriver_win32/chromedriver.exe")
+driver = webdriver.Chrome('Your driver Path... 시바 안해먹음 ')
 driver.maximize_window()
 
-url = 'https://www.yogiyo.co.kr/mobile/#/'
+url = 'https://www.yogiyo.co.kr'
 driver.get(url)
 
 

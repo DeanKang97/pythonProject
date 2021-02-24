@@ -8,8 +8,8 @@ headers = {
     'Accept-Language': "ko-KR,ko"
     }
 
-#가게명 미리 받기
-restaurant_name = '지코바 동래점'
+#추후에 가게정보DB에서 가게명 받아오면 됨
+restaurant_name = 'BHC치킨 여수엑스포광장점 '
 
 #크롬 웹드라이버 사용
 driver = webdriver.Chrome("C:/Users/Myeongha/Downloads/chromedriver_win32/chromedriver.exe")
@@ -26,7 +26,7 @@ def input_restaurant_name(input) :
     #driver.find_element_by_xpath('//*[@id="search.keyword"]/fieldset/div[1]').click()
     time.sleep(1)
     driver.find_element_by_xpath('//*[@id="search.keyword.query"]').send_keys(input)
-    print("입력했다.")
+    print("가게명 입력")
     time.sleep(1)
     driver.find_element_by_xpath('//*[@id="search.keyword.query"]').send_keys(Keys.ENTER)
 
@@ -50,6 +50,7 @@ def set_location(location):
     driver.find_element_by_css_selector('#button_search_address > button.btn.btn-default.ico-pick').click()
     time.sleep(2)
     if (driver.current_url == 'https://www.yogiyo.co.kr/mobile/#/') :
+        print("가게 위치가 아닌 인근 위치로 주소 변경")
         driver.find_element_by_xpath('//*[@id="search"]/div/form/ul/li[3]/a').click()
         location = '가게 인근 위치명'
         time.sleep(2)
@@ -64,9 +65,9 @@ set_location(address)
 def search_restaurant(restaurant_name):
     try:
         driver.find_element_by_xpath('//*[@id="category"]/ul/li[1]/a').click()
-        print('1')
+        #print('1')
         driver.find_element_by_xpath('//*[@id="category"]/ul/li[15]/form/div/input').send_keys(restaurant_name)
-        print('1')
+        #print('1')
         driver.find_element_by_xpath('//*[@id="category_search_button"]').click()
     except Exception as e:
         print('search_restaurant 에러')
@@ -85,8 +86,11 @@ def go_to_restaurant():
 
 go_to_restaurant()
 
-#현재 URL 가져오고 요기요 가게 넘버 가져오기
+
+#현재 URL 가져오고 요기요 가게 코드 가져오기
 url_now = driver.current_url
 restaurant_code = url_now.replace("https://www.yogiyo.co.kr/mobile/#/", "")
 restaurant_code = restaurant_code[:restaurant_code.index("/")]
 print("해당 가게의 요기요 넘버: "+ restaurant_code)
+
+# 가게 코드를 추후 가게정보DB에 저장하면 됨

@@ -20,7 +20,10 @@ headers = {
 # chrome_options = webdriver.ChromeOptions()
 # chrome_options.add_argument("--incognito")
 
-driver = webdriver.Chrome('Your driver Path... 시바 안해먹음 ')
+ch_options = webdriver.ChromeOptions()
+ch_options.add_argument('--incognito') #시크릿 모드
+
+driver = webdriver.Chrome('/Users/deankang/Documents/GitHub/pythonProject/Hisu/chdriver/chromedriver')
 driver.maximize_window()
 
 url = 'https://www.yogiyo.co.kr'

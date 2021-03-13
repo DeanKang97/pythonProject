@@ -29,7 +29,8 @@ def getcomments(restaurant_code):
     df = pd.json_normalize(data)
     df.to_csv(filename, encoding='utf-8-sig')
 
-    exelfile = open("review_" + str(restaurant_code) + ".csv")
+    exelfile = open("review_" + str(restaurant_code) + ".csv", encoding='UTF-8')
+
     headers = csv.reader(exelfile)
     summary = list()
 

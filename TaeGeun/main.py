@@ -1,0 +1,98 @@
+import time
+import warnings
+
+warnings.filterwarnings('ignore')
+from selenium import webdriver
+
+options = webdriver.ChromeOptions()  # 크롬 드라이버 옵션
+options.add_argument('headless')
+options.add_argument('lang=ko_KR')  # 웹 브라우저 안키고 실행 & 한국어 인코딩 설정
+driver = webdriver.Chrome("../../../../PycharmProjects/pythonProject/chromedriver.exe", options=options)
+
+url = 'https://search.shopping.naver.com/catalog/24451759526?cat_id=50000247'
+# https://search.shopping.naver.com/catalog/24452740523?cat_id=50001519 아이폰 12 리뷰 많은거
+# https://search.shopping.naver.com/catalog/24451759526?cat_id=50000247 아이폰 12 리뷰 적은거
+
+driver.get(url)  # url 설정
+
+class Reivews:
+    rating = ""
+    writing_time = ""
+    review_title = ""
+    review_content = ""
+    def __init__(self, rating, writing_time, review_title, review_content) -> object:
+        self.rating = rating
+        self.writing_time = writing_time
+        self.review_title = review_title
+        self.review_content = review_content
+
+
+def clickmenu():  # 쇼핑몰 리뷰 버튼 누르기
+    driver.find_element_by_css_selector('#snb > ul > li:nth-child(4)').click()
+
+
+def makepgnum(pages):  # 페이징 버튼 가져온 후 리스트로 변환 & '현재페이지' 텍스트 제거
+    res = list()
+    t = "현재 페이지\n"
+    for i in pages:
+        res.append(i.text.replace(t, '').strip())
+
+    return res
+
+
+def crolreview(review, ans):  # 리뷰 객체 가져와서 평점, 시간, 리뷰 제목, 리뷰 내용 출략
+
+    for comment in review:
+        rating = comment.find_element_by_css_selector('div >span')
+        review_time = comment.find_element_by_css_selector('div > span:nth-child(4)')
+
+        print(rating.text +" "+ review_time.text)
+        review_title = comment.find_element_by_css_selector('div.reviewItems_review__1eF8A > div>em')
+        review_content = comment.find_element_by_css_selector('div.reviewItems_review__1eF8A > div>p')
+        ans.append(Reivews(rating.text,review_time.text, review_title.text, review_content.text ))
+        print("제목:" + review_title.text + "\n " + review_content.text + "\n\n\n")
+
+    return ans
+
+
+
+def pagingbtn():  # 페이지 이동 및 리뷰 가져오는 메인 모듈
+    clickmenu()  # 쇼핑몰 리뷰 버튼
+    i = 0
+    res = list()
+    page_bar = driver.find_element_by_css_selector('#section_review > div.pagination_pagination__2M9a4')
+    pages = page_bar.find_elements_by_tag_name('a')  # 페이지 수 및 현재 페이지
+    nu = makepgnum(pages)
+
+    while True:
+        if nu[i] in ["맨앞", "이전", "맨뒤"]:  # 맨앞, 이전, 맨뒤 이면 click하지 않고 넘김
+            i += 1
+            continue
+
+        time.sleep(0.5)
+        review_list = driver.find_element_by_css_selector('#section_review > ul')
+        review = review_list.find_elements_by_css_selector('li')  # 리뷰 객체 가져옴
+
+        res = crolreview(review,res)  # 리뷰 객체 반환
+
+        current_page = page_bar.find_element_by_css_selector('a.pagination_now__gZWGP')
+        current_index = str(current_page.text)[7:]  # 현재 페이지 반환
+        print("페이지:" + current_index)  # 현재 페이지 출력
+        try:
+            if int(nu[i]) % 10 == 0:  # 페이지 수가 10의 배수 즉 마지막 페이지 일때 '다음'버튼을 누르고 새로운 페이지 수 객체를 받음
+                i += 1
+                pages[i].click()
+                time.sleep(1)
+                page_bar = driver.find_element_by_css_selector('#section_review > div.pagination_pagination__2M9a4')
+                pages = page_bar.find_elements_by_tag_name('a')
+                nu = makepgnum(pages)
+                i = 0
+            else:  # 다음 페이지 클릭
+                i += 1
+                pages[i].click()
+
+        except:
+            return res
+
+
+

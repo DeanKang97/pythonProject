@@ -4,8 +4,13 @@ from selenium import webdriver #웹드라이버
 import csv
 from selenium.common.exceptions import  NoSuchElementException #옛날블로그유형을 위한 예외처리
 
+
+
 #제품명 지정
 product_name = "세라마이드 인텐스 크림"
+# print("화장품 검색 :", end='')
+# product_name = input()
+
 
 # 네이버 검색api 주소
 url = "https://openapi.naver.com/v1/search/blog?query="

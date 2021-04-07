@@ -12,7 +12,8 @@ driver = webdriver.Chrome("../../../../PycharmProjects/pythonProject/chromedrive
 url = 'https://search.shopping.naver.com/catalog/24451759526?cat_id=50000247'
 # https://search.shopping.naver.com/catalog/24452740523?cat_id=50001519 아이폰 12 리뷰 많은거
 # https://search.shopping.naver.com/catalog/24451759526?cat_id=50000247 아이폰 12 리뷰 적은거
-
+# https://search.shopping.naver.com/catalog/21754707946?cat_id=50000440&frm=NVSCPRO&query=%EB%A7%88%EB%AA%BD%EB%93%9C+%EC%84%B8%EB%9D%BC%EB%A7%88%EC%9D%B4%EB%93%9C+%EC%9D%B8%ED%85%90%EC%8A%A4+%ED%81%AC%EB%A6%BC&NaPm=ct%3Dkn6zixw8%7Cci%3D0094ebf6b79875e71fad391b8887525103526bec%7Ctr%3Dsls%7Csn%3D95694%7Chk%3D1b47e55449cbb34045bc121d00a50b850516662d
+#마몽드 세라마이드 인텐스 크림
 driver.get(url)  # url 설정
 
 class Reivews:
@@ -27,7 +28,7 @@ class Reivews:
         self.review_content = review_content
 
 
-def clickmenu():  # 쇼핑몰 리뷰 버튼 누르기
+def clickmenu():  # 쇼핑몰 리뷰 버튼 누르기 & 화장품은 li:nth-child(5) 해야함
     driver.find_element_by_css_selector('#snb > ul > li:nth-child(4)').click()
 
 

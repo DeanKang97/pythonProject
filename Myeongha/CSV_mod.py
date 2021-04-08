@@ -90,9 +90,6 @@ else:
     print("배송 느림")
     
 
-print(str(vocab['https']))
-
-
 # In[102]:
 
 

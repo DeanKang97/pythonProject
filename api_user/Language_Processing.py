@@ -6,7 +6,7 @@ from hanspell import spell_checker
 
 
 def countwords():
-    data = pd.read_csv('reviews.csv')  # 대상 데이터 로딩
+    data = pd.read_csv("/Users/deankang/Documents/Github/pythonProject/api_user/reviews.csv")  # 대상 데이터 로딩
     data = data.drop_duplicates(["content"], keep="last")
 
     data["content"] = data["content"].str.lower()  # 영어는 소문자로 통합

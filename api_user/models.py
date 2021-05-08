@@ -1,8 +1,6 @@
 from django.db import models
 
 
-# Create your models here.
-
 class Review(models.Model):
     menu = models.TextField()
     comment = models.TextField()
@@ -10,4 +8,11 @@ class Review(models.Model):
     time = models.TextField()
 
     class Meta:
-        db_table = "Reviews"
+        db_table = "Review"
+
+
+class Summary(models.Model):
+    word = models.TextField()
+
+    class Meta:
+        db_table = "Summary"

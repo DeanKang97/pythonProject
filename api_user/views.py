@@ -19,7 +19,7 @@ class ReviewView(APIView):
             data_list = []
 
             for rows in c:
-                print(rows)
+
                 data = {}
                 data['id'] = rows['\ufeff']
                 data['content'] = rows['content']

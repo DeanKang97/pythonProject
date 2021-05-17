@@ -5,8 +5,8 @@ from konlpy.tag import *
 from hanspell import spell_checker
 
 
-def countwords():
-    data = pd.read_csv("/Users/deankang/Documents/Github/pythonProject/api_user/reviews.csv")  # 대상 데이터 로딩
+def countwords(name):
+    data = pd.read_csv("/Users/deankang/Documents/Github/pythonProject/api_user/reviews_"+name+".csv")  # 대상 데이터 로딩
     data = data.drop_duplicates(["content"], keep="last")
 
     data["content"] = data["content"].str.lower()  # 영어는 소문자로 통합
@@ -24,7 +24,8 @@ def countwords():
     stopwords = ['뭐', '으면', '을', '의', '가', '이', '은', '들', '는', '좀', '잘', '걍', '과', '도', '를', '으로',
                  '자', '에', '와', '한', '하다', '.', '👍', '~', '♥', '^^', 'ㅎㅎ', '좋아요', '너무', '!', '피부'
         , '사용', '용량', '구매', '써', '같아요', '솜', '것', '거', '토너', '앰플', '로션', '에센스', '제품', '후', '정리',
-                 '때', '더', '스킨']
+                 '때', '더', '스킨', '또', '쓰기', '늘', '무기', '항상', '주문', '팩',
+                 '계속', '상품', '가성', '끈', '커서', '닥터']
 
     arr = []
     for i in range(0, len(noun)):
@@ -36,9 +37,8 @@ def countwords():
     ans = list()
 
 
-    for a, b in count.most_common(5):  # 가장 빈도수가 많은 5개 출력
+    for a, b in count.most_common(4):  # 가장 빈도수가 많은 5개 출력
         ans.append(a)
 
     return ans
 
-countwords()

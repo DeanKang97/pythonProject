@@ -1,31 +1,33 @@
-from rest_framework.renderers import JSONRenderer
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import Review
-from .serializers import SummarySerializer
-from .models import Summary
 from rest_framework import status
-from .review_csv import getcomments
 from .Language_Processing import countwords
-
-
+import csv
 # Create your views here.
+
 
 class ReviewView(APIView):
     def get(self, request, **kwargs):
-        # review_queryset = Review.objects.all()  # 모든 Review의 정보를 불러온다.
-        # review_queryset_serializer = ReviewSerializer(review_queryset, many=True)
-        # 거짓 판별 리뷰 할떄 사용할 것
+        rq = request.GET.get('key')
+        review = request.GET.get('review')
+        if not review:
+            ans = countwords(rq)
+            return Response(ans, status=status.HTTP_200_OK)
+        else:
+            csv_file= open("/Users/deankang/Documents/Github/pythonProject/api_user/reviews_" + rq + ".csv", 'r')
+            c = csv.DictReader(csv_file)
+            data_list = []
 
-        ans = countwords()
-        # for i in range(len(ans)):
-        #     Summary.objects.create(word=ans[i])
-        #
-        # summary_set = Summary.objects.all()
-        # summary_set_serializer = SummarySerializer(summary_set, many=True)
+            for rows in c:
+                print(rows)
+                data = {}
+                data['id'] = rows['\ufeff']
+                data['content'] = rows['content']
+                data['truth'] = rows['ans']
+                data_list.append(data)
 
-        return Response(ans, status=status.HTTP_200_OK)
+            return Response(data_list, status=status.HTTP_200_OK)
 
     def put(self, request):
 
-        return Response("hello", status=200)
+        return Response('hi', status=200)

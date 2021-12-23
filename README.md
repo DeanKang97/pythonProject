@@ -8,7 +8,7 @@
 
 ### 동작 화면
 ---
-<img width="500" alt="https://user-images.githubusercontent.com/78339038/147203477-1213ae3c-cb6a-4b77-abce-a1614b87564c.PNG">
+<img width="200" alt="KakaoTalk_Photo_2021-08-30-15-10-55" src="https://user-images.githubusercontent.com/78339038/147203477-1213ae3c-cb6a-4b77-abce-a1614b87564c.PNG">
 <img width="200" alt="KakaoTalk_Photo_2021-08-30-15-10-55" src="https://user-images.githubusercontent.com/53002135/131294111-e530875c-c8bb-4768-b04d-1dd746f02589.png">
  
 <img width="200" alt="KakaoTalk_Photo_2021-08-30-15-11-13" src="https://user-images.githubusercontent.com/53002135/131294355-e0831965-43e8-4112-8fec-4c976bd01dfa.png">

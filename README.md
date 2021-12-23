@@ -10,12 +10,17 @@
 <img width="100%" alt="acting_screen" src="https://user-images.githubusercontent.com/78339038/147203477-1213ae3c-cb6a-4b77-abce-a1614b87564c.PNG">
 
 ## 사용 기술 스택
-* Python을 이용하여 리뷰 크롤링
+* Python을 이용한 웹 크롤링
 * 진짜&거짓리뷰 데이터 라벨링 및 전처리 
-* 자연어 처리를 통해 최다 빈도 단어 추출 
+* 자연어 처리를 통한 최다 빈도 단어 추출 
 * svm분류 모델 생성
 * 장고 및 리액트를 이용한 웹페이지 제공
 
 
 ## 과제 진행 과정
 <img width="80%" alt="process" src="https://user-images.githubusercontent.com/78339038/147204313-2fd7b651-d9fd-41e8-b53e-a7570a297623.PNG">
+
+## Contributor
+- [MongDDangmania]("https://github.com/MongDDangmania")
+- [DeanKang97]("https://github.com/DeanKang97")
+- [HIsu1231]("https://github.com/HIsu1231")

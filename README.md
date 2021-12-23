@@ -9,4 +9,5 @@
 ## 동작 화면
 <img width="100%" alt="acting_screen" src="https://user-images.githubusercontent.com/78339038/147203477-1213ae3c-cb6a-4b77-abce-a1614b87564c.PNG">
 
-### 
+## 과제 진행 과정
+<img width="100%" alt="process" src="https://user-images.githubusercontent.com/78339038/147204313-2fd7b651-d9fd-41e8-b53e-a7570a297623.PNG">

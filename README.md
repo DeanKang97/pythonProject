@@ -21,6 +21,6 @@
 <img width="80%" alt="process" src="https://user-images.githubusercontent.com/78339038/147204313-2fd7b651-d9fd-41e8-b53e-a7570a297623.PNG">
 
 ## Contributor
-- [MongDDangmania]("https://github.com/MongDDangmania")
-- [DeanKang97]("https://github.com/DeanKang97")
-- [HIsu1231]("https://github.com/HIsu1231")
+- [MongDDangmania](https://github.com/MongDDangmania)
+- [DeanKang97](https://github.com/DeanKang97)
+- [HIsu1231](https://github.com/HIsu1231)

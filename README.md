@@ -7,7 +7,9 @@
 [프로젝트 소개 영상 링크](https://www.youtube.com/watch?v=B3OSzGj6Xco)
 
 ### 동작 화면
-<img width="522" alt="KakaoTalk_Photo_2021-08-30-15-10-55" src="https://user-images.githubusercontent.com/53002135/131294111-e530875c-c8bb-4768-b04d-1dd746f02589.png">
+---
+<img width="200" alt="KakaoTalk_Photo_2021-08-30-15-10-55" src="https://user-images.githubusercontent.com/53002135/131294111-e530875c-c8bb-4768-b04d-1dd746f02589.png">
 
-<img width="522" alt="KakaoTalk_Photo_2021-08-30-15-11-13" src="https://user-images.githubusercontent.com/53002135/131294355-e0831965-43e8-4112-8fec-4c976bd01dfa.png">
+<img width="200" alt="KakaoTalk_Photo_2021-08-30-15-11-13" src="https://user-images.githubusercontent.com/53002135/131294355-e0831965-43e8-4112-8fec-4c976bd01dfa.png">
 
+### 

@@ -1,7 +1,7 @@
 # 진짜 리뷰 판별 사이트 제작 프로젝트
 #### 21학년도 1학기 종합설계프로젝트 과목
-
-https://www.youtube.com/watch?v=B3OSzGj6Xco
+Cancel changes
+[프로젝트 소개 유튜브 링크](https://www.youtube.com/watch?v=B3OSzGj6Xco)
 
 <img width="522" alt="KakaoTalk_Photo_2021-08-30-15-10-55" src="https://user-images.githubusercontent.com/53002135/131294111-e530875c-c8bb-4768-b04d-1dd746f02589.png">
 

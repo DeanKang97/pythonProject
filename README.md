@@ -4,7 +4,7 @@
 "소정의 원고료" 라는 키워드가 들어간 광고성 블로그 리뷰들을 **웹 크롤링(Python)** 한 후,</br>
  **자연어 처리와 AI학습**을 통해 광고성 게시글과 아닌 게시글의 언어적 특성(명사, 부사, 형용사 등)을 분석, 분류하여 </br>
  소비자에게 신뢰도 있는 리뷰를 제공,합리적 소비를 하게끔 도움을 주는 **웹 사이트**입니다. </br></br>
-[프로젝트 소개 영상 링크](https://youtu.be/FUeq3ByAHy0)
+[프로젝트 소개 영상 링크](https://youtu.be/H5hiLZGH1BA)
 
 ## 동작 화면
 <img width="100%" alt="acting_screen" src="https://user-images.githubusercontent.com/78339038/147203477-1213ae3c-cb6a-4b77-abce-a1614b87564c.PNG">
